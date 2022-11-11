@@ -18,27 +18,12 @@
                 <label style="text-align: center">email:</label>
                 <input type="password" @bind="Email"/>
             </div>
-            <div class="field">
-                            <label style="text-align: center">domain:</label>
-                            <input type="password" @bind="Domain"/>
-                        </div>
-            <div class="field">
-                            <label style="text-align: center">name:</label>
-                            <input type="password" @bind="Name"/>
-                        </div>
-            <div class="field">
-                            <label style="text-align: center">role:</label>
-                            <input type="password" @bind="Role"/>
-                        </div>
+
             <div class="field">
                             <label style="text-align: center">age:</label>
                             <input type="password" @bind="Age"/>
                         </div>
-            <div class="field">
-                            <label style="text-align: center">secur:</label>
-                            <input type="password" @bind="SecurityLevel"/>
-                        </div>
-                                                                        
+
             @if (!string.IsNullOrEmpty(errorLabel))
             {
                 <div class="field">
@@ -55,11 +40,7 @@
     private string userName;
     private string password;
     private string Email;
-    private string Domain;
-    private string Name;
-    private string Role;
     private int Age;
-    private int SecurityLevel;
     private string errorLabel;
     
     private async Task RegisterAsync()
@@ -67,15 +48,11 @@
         errorLabel = "";
         try
         {
-            //await authService.RegisterAsync(new User(userName,password,Email,Domain,Name,Role,Age,SecurityLevel));
+            await authService.RegisterAsync(new UserCreationDto(userName,password,Email,Age));
             userName = "";
             password = " ";
             Email= " ";
-            Domain= " ";
-            Name= " ";
-            Role = " "; 
-            Age= 0; 
-            SecurityLevel= 0; 
+            Age= 0;
         }
         catch (Exception e)
         {

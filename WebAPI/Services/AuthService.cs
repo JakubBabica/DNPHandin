@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Application.LogicInterfaces;
 using Domain.DTOs;
 using Domain.Models;
 
@@ -6,6 +7,8 @@ namespace WebAPI.Services;
 
 public class AuthService:IAuthService
 {
+
+    private IUserLogic _userLogic;
     private readonly IList<User> users = new List<User>
     {
         new User
@@ -27,6 +30,8 @@ public class AuthService:IAuthService
 
     public Task<User> GetUser(string username, string password)
     {
+
+        // users = _userLogic.getAll();
         User? existingUser = users.FirstOrDefault(u => 
             u.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
         
@@ -45,24 +50,25 @@ public class AuthService:IAuthService
 
 
 
-    public Task<User> RegisterUser(UserRegisterDto dto)
+    public async Task<User> RegisterUser(UserCreationDto dto)
     {
-        if (string.IsNullOrEmpty(dto.Username))
+        if (string.IsNullOrEmpty(dto.username))
         {
             throw new ValidationException("Username cannot be null");
         }
 
-        if (string.IsNullOrEmpty(dto.Password))
+        if (string.IsNullOrEmpty(dto.password))
         {
             throw new ValidationException("Password cannot be null");
         }
         // Do more user info validation here
         
         // save to persistence instead of list
-        //User user = new User(Age = dto.Age,Domain = dto.Domain,Email = dto.Email,Name = dto.Name,Password = dto.Password,Role = dto.Role,SecurityLevel = dto.SecurityLevel,Username = dto.Username) { };
+        User user = new User(dto.username,dto.password,dto.email,dto.age);
         //users.Add(user);
-        
-        return Task.CompletedTask as Task<User>;
+        //keep that
+        _userLogic.CreateAsync(dto);
+        return user;
     }
 
 

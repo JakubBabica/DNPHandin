@@ -16,7 +16,14 @@ public class FileContext //reading or writing to the file
             return dataContainer!.Posts;
         }
     }
-
+    public ICollection<User> Users
+    {
+        get
+        {
+            LoadData();
+            return dataContainer!.Users;
+        }
+    }
     private void LoadData()
     {
         if (dataContainer != null) return;
@@ -26,6 +33,7 @@ public class FileContext //reading or writing to the file
             dataContainer = new()
             {
                 Posts = new List<Post>(),
+                Users = new List<User>()
             };
             return;
         }

@@ -1,28 +1,39 @@
-﻿using Domain.Models;
+﻿using Application.DaoInterfaces;
+using Domain.Models;
 
 namespace FileData.FileDaoImpl;
 
-public class CreateUserDao
+public class CreateUserDao:IUserDao
 {
-    private readonly UsersContext context;
+    private readonly FileContext context;
 
-    public CreateUserDao(UsersContext context)
+    public CreateUserDao(FileContext context)
     {
         this.context = context;
     }
-    public Task<User> registerUserAsync(User user)
+
+    public Task<User> CreateAsync(User user)
     {
-        int age = 1;
+        int userId = 1;
         if (context.Users.Any())
         {
-            age = context.Users.Max(u => u.Age);
-            age++;
+            userId = context.Users.Max(u => u.Age);
+            userId++;
         }
-        
-        
+
+        user.Age = userId;
+
         context.Users.Add(user);
         context.SaveChanges();
 
         return Task.FromResult(user);
+    }
+
+    public Task<User?> GetByUsernameAsync(string userName)
+    {
+        User? existing = context.Users.FirstOrDefault(u =>
+            u.Username.Equals(userName, StringComparison.OrdinalIgnoreCase)
+        );
+        return Task.FromResult(existing);
     }
 }
