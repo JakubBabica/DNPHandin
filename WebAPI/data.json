@@ -46,5 +46,18 @@
       "body": "join"
     }
   ],
-  "Users": null
+  "Users": [
+    {
+      "Username": "string",
+      "Password": "string",
+      "Email": "string",
+      "Age": 0
+    },
+    {
+      "Username": "xoxo",
+      "Password": "asd",
+      "Email": "asd",
+      "Age": 0
+    }
+  ]
 }

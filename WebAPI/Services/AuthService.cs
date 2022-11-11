@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Application.Logic;
 using Application.LogicInterfaces;
 using Domain.DTOs;
 using Domain.Models;
+using FileData;
+using FileData.DAOs;
 
 namespace WebAPI.Services;
 
@@ -27,6 +30,11 @@ public class AuthService:IAuthService
             
         }
     };
+
+    public AuthService(IUserLogic userLogic)
+    {
+        _userLogic = userLogic;
+    }
 
     public Task<User> GetUser(string username, string password)
     {
@@ -64,11 +72,11 @@ public class AuthService:IAuthService
         // Do more user info validation here
         
         // save to persistence instead of list
-        User user = new User(dto.username,dto.password,dto.email,dto.age);
+        // User user = new User(dto.username,dto.password,dto.email,dto.age);
         //users.Add(user);
         //keep that
-        _userLogic.CreateAsync(dto);
-        return user;
+
+        return await _userLogic.CreateAsync(dto);;
     }
 
 

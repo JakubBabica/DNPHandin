@@ -81,10 +81,10 @@ public class AuthController:ControllerBase
         {
             User user = await authService.RegisterUser(userRegisterDto);
 
-            // _userLogic.createAsync(user);
-            string token = GenerateJwt(user);
+             // _userLogic.CreateAsync(userRegisterDto);
+            // string token = GenerateJwt(user);
     
-            return Ok(token);
+            return Ok(user);
         }
         catch (Exception e)
         {

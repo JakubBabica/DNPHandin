@@ -1,7 +1,7 @@
 ﻿using Application.DaoInterfaces;
 using Domain.Models;
 
-namespace FileData.FileDaoImpl;
+namespace FileData.DAOs;
 
 public class CreateUserDao:IUserDao
 {
@@ -14,17 +14,23 @@ public class CreateUserDao:IUserDao
 
     public Task<User> CreateAsync(User user)
     {
-        int userId = 1;
-        if (context.Users.Any())
-        {
-            userId = context.Users.Max(u => u.Age);
-            userId++;
-        }
+        // int userId = 1;
+        // if (context.Users.Any())
+        // {
+        //     userId = context.Users.Max(u => u.Age);
+        //     userId++;
+        // }
+        //
+        // user.Age = userId;
 
-        user.Age = userId;
+        Console.WriteLine(user.Password + "i");
+        Console.WriteLine(context);
 
         context.Users.Add(user);
+
         context.SaveChanges();
+        
+        Console.WriteLine(user.Username);
 
         return Task.FromResult(user);
     }

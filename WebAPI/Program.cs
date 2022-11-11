@@ -4,6 +4,7 @@ using Application.Logic;
 using Application.LogicInterfaces;
 using Domain.Auth;
 using FileData;
+using FileData.DAOs;
 using FileData.FileDaoImpl;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -13,8 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<FileContext>();
-builder.Services.AddScoped<IUserLogic, UserLogic>();
 builder.Services.AddScoped<IUserDao, CreateUserDao>();
+builder.Services.AddScoped<IUserLogic, UserLogic>();
 builder.Services.AddScoped<IPostDAO, PostFileDTO>();
 builder.Services.AddScoped<IPostLogic, PostLogic>();
 builder.Services.AddScoped<IAuthService, AuthService>();

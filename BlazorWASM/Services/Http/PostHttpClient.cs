@@ -21,6 +21,7 @@ public class PostHttpClient : IPostService
     {
         HttpResponseMessage response = await client.PostAsJsonAsync("/Post", dto);
         string result = await response.Content.ReadAsStringAsync();
+       
         if (!response.IsSuccessStatusCode)
         {
             throw new Exception(result);
