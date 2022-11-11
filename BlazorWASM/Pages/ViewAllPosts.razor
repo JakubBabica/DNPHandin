@@ -1,0 +1,57 @@
+﻿@page "/ViewAllPosts"
+
+@using Domain.Models
+@using HttpClients.ClientInterfaces
+@inject IPostService postService
+@inject NavigationManager navMgr
+
+<h3>View All Posts</h3>
+
+@if (!string.IsNullOrEmpty(msg))
+{
+    <div>
+        <span>@msg</span>
+    </div>
+}
+
+@if (posts == null)
+{
+    <span>Loading..</span>
+}
+else if (!posts.Any())
+{
+    <span>No posts to be found</span>
+}
+else
+{
+    <div class="users-container">
+        @foreach (Post post in posts)
+        {
+            <div class="user-card">
+                <button @onclick="ViewPostsDetails">@post.title</button>
+            </div>
+        }
+    </div>
+}
+@code {
+    private IEnumerable<Post>? posts;
+    private string msg = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        msg = "";
+        try
+        {
+            posts = await postService.GetPosts();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            msg = e.Message;
+        }
+    }
+    private void ViewPostsDetails()
+    {
+        navMgr.NavigateTo("/ViewPosts");
+    }
+}

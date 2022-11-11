@@ -1,0 +1,76 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BlazorWASM
+build_property.RootNamespace = BlazorWASM
+build_property.ProjectDir = C:\Users\babic\RiderProjects\BetterReddit\BlazorWASM\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\babic\RiderProjects\BetterReddit\BlazorWASM
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/ViewAllPosts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld0FsbFBvc3RzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/ViewPostsDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld1Bvc3RzRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/CreatePost.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUG9zdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-ceegisofnu
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-xm4hp2nt19
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/LoginButtons.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5CdXR0b25zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-7bsgaluun0
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-jk00ermrez
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-69rflur3ak
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

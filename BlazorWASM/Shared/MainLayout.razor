@@ -1,0 +1,20 @@
+﻿@using static BlazorWASM.Pages.Login
+@using BlazorWASM.Pages
+@inherits LayoutComponentBase
+<PageTitle>BlazorWASM</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu/>
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+               <LoginButtons></LoginButtons>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
