@@ -44,20 +44,53 @@
       "Id": 9,
       "title": "via food festival",
       "body": "join"
+    },
+    {
+      "Id": 10,
+      "title": "sasf",
+      "body": "ads"
+    },
+    {
+      "Id": 11,
+      "title": "title",
+      "body": "this is working"
     }
   ],
   "Users": [
     {
+      "Id": 0,
       "Username": "string",
       "Password": "string",
       "Email": "string",
       "Age": 0
     },
     {
+      "Id": 0,
       "Username": "xoxo",
       "Password": "asd",
       "Email": "asd",
       "Age": 0
+    },
+    {
+      "Id": 0,
+      "Username": "test",
+      "Password": "test",
+      "Email": "test",
+      "Age": 2
+    },
+    {
+      "Id": 0,
+      "Username": "This is new ",
+      "Password": "asfdfd",
+      "Email": "asdfa",
+      "Age": 23
+    },
+    {
+      "Id": 0,
+      "Username": "vlado mocari",
+      "Password": "paradajka4",
+      "Email": "Vlado@vlad.com",
+      "Age": 100
     }
   ]
 }

@@ -14,7 +14,7 @@ public class PostFileDTO:IPostDAO
     }
 
     public Task<Post> createAsync(Post post)
-    {
+    {   
         int postId = 1;
         if (context.Posts.Any())
         {

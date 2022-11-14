@@ -61,16 +61,16 @@ public class AuthController:ControllerBase
     [HttpPost, Route("login")]
     public async Task<ActionResult> Login([FromBody] UserLoginDto userLoginDto)
     {
+    
         try
         {
-            
-            User user = await authService.GetUser(userLoginDto.Username, userLoginDto.Password);
+            User user = await authService.GetUser(userLoginDto);
             string token = GenerateJwt(user);
-    
             return Ok(token);
         }
         catch (Exception e)
         {
+            Console.WriteLine("controller is not working");
             return BadRequest(e.Message);
         }
     }
@@ -79,6 +79,7 @@ public class AuthController:ControllerBase
     {
         try
         {
+            Console.WriteLine("register is working");
             User user = await authService.RegisterUser(userRegisterDto);
 
              // _userLogic.CreateAsync(userRegisterDto);

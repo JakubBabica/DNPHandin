@@ -36,24 +36,13 @@ public class AuthService:IAuthService
         _userLogic = userLogic;
     }
 
-    public Task<User> GetUser(string username, string password)
+    public Task<User> GetUser(UserLoginDto userLoginDto)
     {
-
-        // users = _userLogic.getAll();
-        User? existingUser = users.FirstOrDefault(u => 
-            u.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
+        Console.WriteLine("this is strange");
+        Task<User> user = _userLogic.GetUser( userLoginDto);
         
-        if (existingUser == null)
-        {
-            throw new Exception("User not found");
-        }
 
-        if (!existingUser.Password.Equals(password))
-        {
-            throw new Exception("Password mismatch");
-        }
-
-        return Task.FromResult(existingUser);
+        return user;
     }
 
 

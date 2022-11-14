@@ -1,4 +1,5 @@
 ﻿using Application.DaoInterfaces;
+using Domain.DTOs;
 using Domain.Models;
 
 namespace FileData.DAOs;
@@ -33,6 +34,37 @@ public class CreateUserDao:IUserDao
         Console.WriteLine(user.Username);
 
         return Task.FromResult(user);
+    }
+
+    public Task<IEnumerable<User>> GetUserAsync(SearchUserDto searchUserDto)
+    {
+        IEnumerable<User> users = context.Users.AsEnumerable();
+        if (searchUserDto.IdContains != null)
+        {
+            users = context.Users.Where(u => u.Id.Equals(searchUserDto.IdContains));
+        }
+
+        return Task.FromResult(users);
+    }
+
+    public Task<User?> GetUserLoginAsync(UserLoginDto userLoginDto)
+    {
+        IEnumerable<User> users = context.Users.AsEnumerable();
+        
+        User? existingUser = users.FirstOrDefault(u => 
+            u.Username.Equals(userLoginDto.Username, StringComparison.OrdinalIgnoreCase));
+        
+        if (existingUser == null)
+        {
+            throw new Exception("User not found");
+        }
+        
+        if (!existingUser.Password.Equals(userLoginDto.Password))
+        {
+            throw new Exception("Password mismatch");
+        }
+
+        return Task.FromResult(existingUser);
     }
 
     public Task<User?> GetByUsernameAsync(string userName)

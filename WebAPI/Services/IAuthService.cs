@@ -5,7 +5,7 @@ namespace WebAPI.Services;
 
 public interface IAuthService
 {
-    Task<User> GetUser(string username, string password);
+    Task<User> GetUser(UserLoginDto userLoginDto);
     
     Task<User> RegisterUser(UserCreationDto dto);
 }

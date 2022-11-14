@@ -24,6 +24,7 @@ public class UserLogic:IUserLogic
         ValidateData(dto);
         User toCreate = new User
         {
+            Id = dto.id,
             Username = dto.username,
             Password = dto.password,
             Age = dto.age,
@@ -37,6 +38,17 @@ public class UserLogic:IUserLogic
 
         return created;
     }
+
+    public Task<User> GetUser(UserLoginDto userLoginDto)
+    {
+        return userDao.GetUserLoginAsync(userLoginDto);
+    }
+
+    public Task<IEnumerable<User>> GetUserAsync(SearchUserDto searchParameters)
+    {
+        return userDao.GetUserAsync(searchParameters);
+    }
+
     private static void ValidateData(UserCreationDto userToCreate)
     {
         string userName = userToCreate.username;
