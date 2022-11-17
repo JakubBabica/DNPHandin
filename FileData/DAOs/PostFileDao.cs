@@ -51,7 +51,9 @@ public class PostFileDTO:IPostDAO
     }
     public Task<Post> GetByIdAsync(int? id)
     {
+        Console.WriteLine("get to the file");
         Post? post = context.Posts.FirstOrDefault(p =>p.Id.Equals(id));
+        Console.WriteLine(post.title);
         return Task.FromResult(post);
     }
 }

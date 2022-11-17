@@ -62,7 +62,7 @@ public class PostController:ControllerBase
         }
         catch (Exception e)
         {
-            Console.WriteLine("jozo kubany");
+            Console.WriteLine("jozo kubany 2");
             Console.WriteLine(e);
             return StatusCode(500, e.Message);
         }

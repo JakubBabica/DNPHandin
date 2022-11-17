@@ -6,28 +6,34 @@
 @using Domain.DTOs
 @inject IPostService postService;
 
-<h3>View Posts Details</h3>
 <h3>Post:</h3>
-    <div class="form-group field">
-        <label>Title:</label>
-        <label type="text" @bind="dto.title"/>
-    </div>
-    <div class="form-group field">
-        <label>body:</label>
-        <label @bind="dto.body">
-        </label>
-    </div>
-    <div class="button-row">
+<div class="button-row">
         <button @onclick="LoadPosts" class="acceptbtn">Load</button>
     </div>
-@if (!string.IsNullOrEmpty(msg))
+@if (post == null)
 {
-    <label style="color: red">@msg</label>
+    
+    <p>Click to load</p>
+}else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>title</th>
+            <th>body</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>@post.title</td>
+            <td>@post.body</td>
+        </tr>
+        </tbody>
+    </table>
 }
 @code {
     [Parameter]
     public int Id { get; set; }
-    private NewPostDTO dto = null!;
     private Post post;
     private string msg = "";
 
@@ -35,8 +41,9 @@
     {
         try
         {
-            Console.WriteLine("jajaj");
             post = await postService.GetByIdAsync(Id);
+            Console.WriteLine(post.title);
+            Console.WriteLine(post.body);
         }
         catch (Exception e)
         {
