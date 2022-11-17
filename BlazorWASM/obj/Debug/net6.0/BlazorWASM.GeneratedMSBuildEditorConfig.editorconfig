@@ -27,10 +27,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/ViewAllPosts.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld0FsbFBvc3RzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/ViewPostsDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld1Bvc3RzRGV0YWlscy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -54,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope = b-xm4hp2nt19
 [C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/LoginButtons.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5CdXR0b25zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-7bsgaluun0
+
+[C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Pages/ViewAllPosts.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld0FsbFBvc3RzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-35fnskyf6d
 
 [C:/Users/babic/RiderProjects/BetterReddit/BlazorWASM/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

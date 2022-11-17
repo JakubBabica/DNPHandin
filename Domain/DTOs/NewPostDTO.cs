@@ -2,8 +2,8 @@
 
 public class NewPostDTO
 {
-    public string title { get; }
-    public string body { get; }
+    public string title { get; set; }
+    public string body { get; set; }
 
     public NewPostDTO(string title, string body)
     {

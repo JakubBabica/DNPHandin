@@ -28,12 +28,13 @@ else
         @foreach (Post post in posts)
         {
             <div class="user-card">
-                <button @onclick="ViewPostsDetails">@post.title</button>
+                <button @onclick="@(() => navMgr.NavigateTo($"/ViewPosts/{post.Id}"))">@post.title</button>
             </div>
         }
     </div>
 }
 @code {
+    public int Id { get; set; }
     private IEnumerable<Post>? posts;
     private string msg = "";
 
@@ -49,9 +50,5 @@ else
             Console.WriteLine(e);
             msg = e.Message;
         }
-    }
-    private void ViewPostsDetails()
-    {
-        navMgr.NavigateTo("/ViewPosts");
     }
 }

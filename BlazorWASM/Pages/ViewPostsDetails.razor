@@ -1,58 +1,42 @@
-﻿@page "/ViewPosts"
+﻿@page "/ViewPosts/{id:int}"
 
 @using HttpClients.ClientInterfaces
 @using Domain.Models
 @using System.Collections
+@using Domain.DTOs
 @inject IPostService postService;
 
 <h3>View Posts Details</h3>
-
-<div>
-    <button @onclick="LoadPosts">Load</button>
-</div>  
-@if (posts == null)
-{
-}
-else if (!posts.Any())
-{
-    <p>No Posts to display</p>
-}
-else
-{
-    <table class="table">
-        <thead>
-        <tr>
-            <th>post ID</th>
-            <th>Title ID</th>
-            <th>Body</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var item in posts)
-        {
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.title</td>
-                <td>@item.body</td>
-            </tr>
-        }
-        
-        </tbody>
-    </table>
-}
+<h3>Post:</h3>
+    <div class="form-group field">
+        <label>Title:</label>
+        <label type="text" @bind="dto.title"/>
+    </div>
+    <div class="form-group field">
+        <label>body:</label>
+        <label @bind="dto.body">
+        </label>
+    </div>
+    <div class="button-row">
+        <button @onclick="LoadPosts" class="acceptbtn">Load</button>
+    </div>
 @if (!string.IsNullOrEmpty(msg))
 {
     <label style="color: red">@msg</label>
 }
 @code {
-    private IEnumerable<Post>? posts;
+    [Parameter]
+    public int Id { get; set; }
+    private NewPostDTO dto = null!;
+    private Post post;
     private string msg = "";
 
     private async Task LoadPosts()
     {
         try
         {
-            posts = await postService.GetAsync(null, null, null);
+            Console.WriteLine("jajaj");
+            post = await postService.GetByIdAsync(Id);
         }
         catch (Exception e)
         {

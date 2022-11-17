@@ -68,7 +68,6 @@ public class JwtAuthService:IAuthService
 
         string userAsJson = JsonSerializer.Serialize(userLoginDto);
         StringContent content = new(userAsJson, Encoding.UTF8, "application/json");
-        Console.WriteLine("cant get past jwt");
         HttpResponseMessage response = await _client.PostAsync("https://localhost:7156/auth/login", content);
         string responseContent = await response.Content.ReadAsStringAsync();
         

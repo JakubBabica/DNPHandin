@@ -57,6 +57,14 @@
     width: 30px;
     cursor: pointer;
 }
+/* _content/BlazorWASM/Pages/ViewAllPosts.razor.rz.scp.css */
+.acceptbtn[b-35fnskyf6d] {
+    background-color:lightgreen;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 /* _content/BlazorWASM/Shared/MainLayout.razor.rz.scp.css */
 .page[b-jk00ermrez] {
     position: relative;

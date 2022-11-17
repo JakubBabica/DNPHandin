@@ -32,4 +32,9 @@ public class PostLogic : IPostLogic
     {
         return postDao.GetAsync(searchParameters);
     }
+
+    public Task<Post> GetByIdAsync(int? id)
+    {
+        return postDao.GetByIdAsync(id);;
+    }
 }

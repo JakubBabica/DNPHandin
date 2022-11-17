@@ -32,6 +32,7 @@ public class PostFileDTO:IPostDAO
     
     public Task<IEnumerable<Post>> GetAsync(SearchPostDto searchParameters)
     {
+        Console.WriteLine("post file");
         IEnumerable<Post> posts = context.Posts.AsEnumerable();
         if (searchParameters.IdContains != null)
         {
@@ -47,5 +48,10 @@ public class PostFileDTO:IPostDAO
             p.title.Equals(title, StringComparison.OrdinalIgnoreCase)
         );
         return Task.FromResult(existing);
+    }
+    public Task<Post> GetByIdAsync(int? id)
+    {
+        Post? post = context.Posts.FirstOrDefault(p =>p.Id.Equals(id));
+        return Task.FromResult(post);
     }
 }

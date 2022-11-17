@@ -40,12 +40,29 @@ public class PostController:ControllerBase
     {
         try
         {
+            Console.WriteLine("ttik");
             SearchPostDto parameters = new(id);
             IEnumerable<Post> posts = await PostLogic.GetAsync(parameters);
             return Ok(posts);
         }
         catch (Exception e)
         {
+            Console.WriteLine(e);
+            return StatusCode(500, e.Message);
+        }
+    }
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<Post>> GetByIdAsync([FromRoute] int id)
+    {
+        try
+        {
+            Console.WriteLine("jozo kubany");
+            Post post = await PostLogic.GetByIdAsync(id);
+            return Ok(post);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("jozo kubany");
             Console.WriteLine(e);
             return StatusCode(500, e.Message);
         }

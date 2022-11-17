@@ -33,26 +33,11 @@ public class PostHttpClient : IPostService
         })!;
         return post;
     }
-
-    public async Task<ICollection<Post>> GetAsync(string? title, int? userId, bool? body)
-    {
-        HttpResponseMessage response = await client.GetAsync("/Post");
-        
-        string content = await response.Content.ReadAsStringAsync();
-        if (!response.IsSuccessStatusCode)
-        {
-            throw new Exception(content);
-        }
-        
-        ICollection<Post> posts = JsonSerializer.Deserialize<ICollection<Post>>(content, new JsonSerializerOptions
-        {
-            PropertyNameCaseInsensitive = true
-        })!;
-        return posts;
-    }
+    
 
     public async Task<IEnumerable<Post>> GetPosts(string? titleContains = null)
     {
+        
         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", JwtAuthService.Jwt);
         string uri = "/Post";
         if (!string.IsNullOrEmpty(titleContains))
@@ -71,5 +56,23 @@ public class PostHttpClient : IPostService
         })!;
         return posts;
     }
-    
+
+    public async Task<Post> GetByIdAsync(int id)
+    {
+        Console.WriteLine("i got here");
+        HttpResponseMessage response = await client.GetAsync($"/Post/{id}");
+        string content = await response.Content.ReadAsStringAsync();
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(content);
+        }
+        
+        Post post = JsonSerializer.Deserialize<Post>(content, 
+            new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            }
+        )!;
+        return post;
+    }
 }
