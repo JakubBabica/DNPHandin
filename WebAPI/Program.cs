@@ -3,10 +3,9 @@ using Application.DaoInterfaces;
 using Application.Logic;
 using Application.LogicInterfaces;
 using Domain.Auth;
+using EfcDataAccess;
 using EfcDataAccess.DAOs;
 using FileData;
-using FileData.DAOs;
-using FileData.FileDaoImpl;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using WebAPI.Services;
@@ -14,12 +13,10 @@ using WebAPI.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<FileContext>();
-builder.Services.AddScoped<IUserDao, CreateUserDao>();
-//builder.Services.AddScoped<IUserDao, UserEfcDao>(); -use later
+builder.Services.AddDbContext<TodoContext>();
+builder.Services.AddScoped<IUserDao, UserEfcDao>(); 
 builder.Services.AddScoped<IUserLogic, UserLogic>();
-builder.Services.AddScoped<IPostDAO, PostFileDTO>();
-//builder.Services.AddScoped<IPostDAO, PostEfcDao>(); -use later
+builder.Services.AddScoped<IPostDAO, PostEfcDao>(); 
 builder.Services.AddScoped<IPostLogic, PostLogic>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped(sp=>new HttpClient

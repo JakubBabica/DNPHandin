@@ -10,4 +10,16 @@
       <ProjectReference Include="..\Application\Application.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="DAOs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="DAOs\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="DAOs\**" />
+    </ItemGroup>
+
 </Project>

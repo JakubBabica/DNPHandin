@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebAPI.Controllers;
 [ApiController]
 [Route("[controller]")]
-[Authorize]
+//[Authorize]
 public class PostController:ControllerBase
 {
     private readonly IPostLogic PostLogic;
@@ -26,6 +26,7 @@ public class PostController:ControllerBase
     {
         try
         {
+            Console.WriteLine("i got to controller");
             Post post = await PostLogic.CreateAsync(newPostDto);
             return Created($"/Post/{post.Id}", post);
         }
@@ -40,7 +41,6 @@ public class PostController:ControllerBase
     {
         try
         {
-            Console.WriteLine("ttik");
             SearchPostDto parameters = new(id);
             IEnumerable<Post> posts = await PostLogic.GetAsync(parameters);
             return Ok(posts);
@@ -56,13 +56,11 @@ public class PostController:ControllerBase
     {
         try
         {
-            Console.WriteLine("jozo kubany");
             Post post = await PostLogic.GetByIdAsync(id);
             return Ok(post);
         }
         catch (Exception e)
         {
-            Console.WriteLine("jozo kubany 2");
             Console.WriteLine(e);
             return StatusCode(500, e.Message);
         }

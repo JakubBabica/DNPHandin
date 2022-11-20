@@ -19,6 +19,7 @@ public class PostHttpClient : IPostService
     
     public async Task<Post> Create(NewPostDTO dto)
     {
+        Console.WriteLine("i got to post client");
         HttpResponseMessage response = await client.PostAsJsonAsync("/Post", dto);
         string result = await response.Content.ReadAsStringAsync();
        

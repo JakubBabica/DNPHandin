@@ -4,7 +4,7 @@ using Domain.Models;
 
 namespace FileData.DAOs;
 
-public class CreateUserDao:IUserDao
+public class CreateUserDao
 {
     private readonly FileContext context;
 

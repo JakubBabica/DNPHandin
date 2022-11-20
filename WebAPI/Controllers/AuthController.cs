@@ -70,7 +70,6 @@ public class AuthController:ControllerBase
         }
         catch (Exception e)
         {
-            Console.WriteLine("controller is not working");
             return BadRequest(e.Message);
         }
     }
@@ -79,7 +78,6 @@ public class AuthController:ControllerBase
     {
         try
         {
-            Console.WriteLine("register is working");
             User user = await authService.RegisterUser(userRegisterDto);
 
              // _userLogic.CreateAsync(userRegisterDto);

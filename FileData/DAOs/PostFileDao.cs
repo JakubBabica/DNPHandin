@@ -4,7 +4,7 @@ using Domain.Models;
 
 namespace FileData.FileDaoImpl;
 
-public class PostFileDTO:IPostDAO
+public class PostFileDTO
 {
     private readonly FileContext context;
 
