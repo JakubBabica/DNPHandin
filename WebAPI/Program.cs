@@ -5,7 +5,6 @@ using Application.LogicInterfaces;
 using Domain.Auth;
 using EfcDataAccess;
 using EfcDataAccess.DAOs;
-using FileData;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using WebAPI.Services;

@@ -27,9 +27,7 @@ C:\Users\babic\RiderProjects\BetterReddit\WebAPI\obj\Debug\net6.0\WebAPI.genrunt
 C:\Users\babic\RiderProjects\BetterReddit\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
 C:\Users\babic\RiderProjects\BetterReddit\WebAPI\bin\Debug\net6.0\Application.dll
 C:\Users\babic\RiderProjects\BetterReddit\WebAPI\bin\Debug\net6.0\Domain.dll
-C:\Users\babic\RiderProjects\BetterReddit\WebAPI\bin\Debug\net6.0\FileData.dll
 C:\Users\babic\RiderProjects\BetterReddit\WebAPI\bin\Debug\net6.0\Application.pdb
-C:\Users\babic\RiderProjects\BetterReddit\WebAPI\bin\Debug\net6.0\FileData.pdb
 C:\Users\babic\RiderProjects\BetterReddit\WebAPI\bin\Debug\net6.0\Domain.pdb
 C:\Users\babic\RiderProjects\BetterReddit\WebAPI\bin\Debug\net6.0\data.json
 C:\Users\babic\RiderProjects\BetterReddit\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
